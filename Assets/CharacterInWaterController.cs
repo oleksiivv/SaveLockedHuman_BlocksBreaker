@@ -7,9 +7,11 @@ public class CharacterInWaterController : MonoBehaviour
     private Animator animator;
 
     private bool alive=true;
+    private bool won=false;
 
     void Start(){
         alive=true;
+        won=false;
 
         animator = GetComponent<Animator>();
         animator.enabled = false;
@@ -19,7 +21,7 @@ public class CharacterInWaterController : MonoBehaviour
     }
 
     void RandomMovement(){
-        if(alive){
+        if(alive && !won && IsNotMenu()){
             animator.SetBool("attack", true);
             Invoke(nameof(RandomMovement), Random.Range(5f, 14f));
         }
@@ -35,6 +37,11 @@ public class CharacterInWaterController : MonoBehaviour
     }
 
     public void Win(){
+        won=true;
         animator.SetBool("damage", true);
+    }
+
+    private bool IsNotMenu(){
+        return Application.loadedLevel>0;
     }
 }
