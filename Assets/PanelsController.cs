@@ -13,13 +13,13 @@ public class PanelsController : ScenesManager
     private static int addCnt=1;
 
 #if UNITY_IOS
-    private string appId = "ca-app-pub-4962234576866611~4700831871";
-    private string bannerId="ca-app-pub-4962234576866611/5591435237";
-    private string intersitionalId="ca-app-pub-4962234576866611/5913841192";
+    private string appId = "ca-app-pub-4962234576866611~8868101383";
+    private string bannerId="ca-app-pub-4962234576866611/9967175032";
+    private string intersitionalId="ca-app-pub-4962234576866611/3775556803";
 #else
-    private string appId = "ca-app-pub-4962234576866611~4700831871";
-    private string bannerId="ca-app-pub-4962234576866611/5591435237";
-    private string intersitionalId="ca-app-pub-4962234576866611/5913841192";
+    private string appId = "ca-app-pub-4962234576866611~3401766686";
+    private string bannerId="ca-app-pub-4962234576866611/7523230129";
+    private string intersitionalId="ca-app-pub-4962234576866611/3751506073";
 #endif
 
     private BannerView _bannerView;
@@ -36,13 +36,13 @@ public class PanelsController : ScenesManager
         MobileAds.Initialize(initStatus => {
           //CreateBannerView();
           //LoadBannerAd();
-          //LoadLoadInterstitialAd();
+          LoadLoadInterstitialAd();
         });
 
         panelsOn=false;
 
         //TODO: remove(debug only)
-        PlayerPrefs.SetInt("level", Application.loadedLevel+1);
+        //PlayerPrefs.SetInt("level", Application.loadedLevel+1);
     }
 
     public void pause(){
@@ -83,6 +83,8 @@ public class PanelsController : ScenesManager
             if(waterLevelController){
                 waterLevelController.OnPlayerWinHandle();
             }
+
+            showIntersitionalGoogleAd();
         }
     }
 

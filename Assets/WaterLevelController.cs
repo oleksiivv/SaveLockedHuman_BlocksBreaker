@@ -56,6 +56,7 @@ public class WaterLevelController : MonoBehaviour
     public void OnPlayerWinHandle(){
         waterFX.Stop();
         speed=-3;
+        speedCoef=1;
 
         foreach(var brick in frontWallBricks){
             brick.AddForce(Vector3.forward*Random.Range(50, 80));

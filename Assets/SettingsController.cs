@@ -34,14 +34,14 @@ public class SettingsController : MonoBehaviour
         PlayerPrefs.SetInt("!sound",1);
         updateSound();
 
-        //GetComponent<AudioSource>().enabled=false;
+        GetComponent<AudioSource>().enabled=false;
     }
 
     public void unmuteSound(){
         PlayerPrefs.SetInt("!sound",0);
         updateSound();
 
-        //GetComponent<AudioSource>().enabled=true;
+        GetComponent<AudioSource>().enabled=true;
     }
 
 

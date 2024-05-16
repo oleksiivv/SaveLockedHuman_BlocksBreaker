@@ -1958,12 +1958,12 @@ PrefabInstance:
     - target: {fileID: 8542172655173238461, guid: 5ed80e9b61f2fdd49a88b50a96b7b6be,
         type: 3}
       propertyPath: delay
-      value: 0.8
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8542172655173238461, guid: 5ed80e9b61f2fdd49a88b50a96b7b6be,
         type: 3}
       propertyPath: speed
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8542172655173238461, guid: 5ed80e9b61f2fdd49a88b50a96b7b6be,
         type: 3}
@@ -1985,6 +1985,11 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 352678974}
+    - target: {fileID: 8542172655173238461, guid: 5ed80e9b61f2fdd49a88b50a96b7b6be,
+        type: 3}
+      propertyPath: speedCoef
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8542172655173238461, guid: 5ed80e9b61f2fdd49a88b50a96b7b6be,
         type: 3}
       propertyPath: breakWallEffect
