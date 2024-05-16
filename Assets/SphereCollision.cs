@@ -18,7 +18,7 @@ public class SphereCollision : MonoBehaviour
              ParticleSystem coinGetEffect = other.gameObject.transform.GetChild(0).transform.gameObject.GetComponent<ParticleSystem>();
              coinGetEffect.gameObject.transform.parent=null;
              coinGetEffect.Play();
-             PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins")+1);
+             PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins")+5);
              coins.showCoinsText();
              Destroy(other.gameObject);
          }

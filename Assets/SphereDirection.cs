@@ -26,7 +26,7 @@ public class SphereDirection : MonoBehaviour
         directionSlider.minValue=-90;
         directionSlider.maxValue=90;
 
-        directionSlider.value=0;
+        Invoke(nameof(ResetSlider), 0.1f);
 
         canLaunch=true;
         landed=false;
@@ -34,13 +34,19 @@ public class SphereDirection : MonoBehaviour
         directionArrow.SetActive(landed);
     }
 
+    void ResetSlider()
+    {
+        directionSlider.value=0;
+    }
+
 
     void Update(){
+        transform.eulerAngles=new Vector3(transform.eulerAngles.x, -directionSlider.value, transform.eulerAngles.z);
+
         if(canLaunch && level.alive && !level.win && landed ){
-            transform.eulerAngles=new Vector3(transform.eulerAngles.x, -directionSlider.value, transform.eulerAngles.z);
 
             if(Input.GetMouseButtonUp(0) && !PanelsController.panelsOn){
-                rb.AddRelativeForce(Vector3.forward*-600, ForceMode.Force);
+                rb.AddForce(gameObject.transform.forward*-600, ForceMode.Force);
                 canLaunch=false;
                 directionArrow.SetActive(false);
                 //level.setSpheresDelta(1);
