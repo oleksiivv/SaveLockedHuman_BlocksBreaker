@@ -170,6 +170,7 @@ public class PanelsController : ScenesManager
 
 
       public bool showIntersitionalGoogleAd(){
+          return true;
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
             _interstitialAd.Show();
