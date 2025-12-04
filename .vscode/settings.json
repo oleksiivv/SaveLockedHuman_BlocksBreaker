@@ -52,5 +52,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BlocksBreaker_SaveCharacter.sln"
+    "dotnet.defaultSolution": "SaveLockedHuman_BlocksBreaker.sln"
 }

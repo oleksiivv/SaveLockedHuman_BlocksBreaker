@@ -68,8 +68,10 @@ public class PanelsController : ScenesManager
     public void setDeathPanelVisibility(bool visible){
         deathPanel.SetActive(visible);
 
-        showIntersitionalGoogleAd();
-        
+        if (addCnt % 2 == 0)
+        {
+            showIntersitionalGoogleAd();
+        }
         addCnt++;
     }
 
@@ -78,13 +80,20 @@ public class PanelsController : ScenesManager
         winPanel.SetActive(visible);
 
         if(visible){
-            PlayerPrefs.SetInt("level", Application.loadedLevel+1);
+            if (PlayerPrefs.GetInt("level", 0) < Application.loadedLevel + 1)
+            {
+                PlayerPrefs.SetInt("level", Application.loadedLevel + 1);
+            }
 
             if(waterLevelController){
                 waterLevelController.OnPlayerWinHandle();
             }
 
-            showIntersitionalGoogleAd();
+            if (addCnt % 2 == 0)
+            {
+                showIntersitionalGoogleAd();
+            }
+            addCnt++;
         }
     }
 
@@ -170,7 +179,7 @@ public class PanelsController : ScenesManager
 
 
       public bool showIntersitionalGoogleAd(){
-          return true;
+        //  return true;
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
             _interstitialAd.Show();

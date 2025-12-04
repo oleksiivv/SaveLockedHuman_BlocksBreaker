@@ -53,9 +53,9 @@ public class SphereDirection : MonoBehaviour
             }
 
         }
-        else if((!canLaunch && rb.velocity.magnitude<=0.2f) || collisionCnt>=maxCollisionsCnt){
-            Debug.Log(rb.velocity.magnitude);
-            rb.velocity*=0.95f;
+        else if((!canLaunch && rb.linearVelocity.magnitude<=0.2f) || collisionCnt>=maxCollisionsCnt){
+            Debug.Log(rb.linearVelocity.magnitude);
+            rb.linearVelocity*=0.95f;
             Invoke(nameof(createNew),1.5f);
         }
 
